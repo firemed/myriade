@@ -24,14 +24,15 @@
                     <img id="banner" src="<?php echo get_template_directory_uri(); ?>/img/photo_slider.jpg" alt="photo_header">
                     <a href=""><img id="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-header.png" alt="logo_header"></a>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/img/home.png" alt="home"></a></li>
-                        <li><a href=""><strong>Visiter le domaine</strong></a></li>
-                        <li><a href=""><strong>Tarifs</strong></a></li>
-                        <li><a href=""><strong>Reservation</strong></a></li>
-                        <li><a href=""><strong>Liens</strong></a></li>
-                        <li><a href=""><strong>Contact et Acces</strong></a></li>
-                    </ul>
-                </nav>
+                <?php
+
+                $defaults = array(
+
+                    'menu_id'         => '2'
+
+                );
+
+                wp_nav_menu( $defaults );
+
+                ?>
             </header>

@@ -37,13 +37,18 @@ body{
     position: absolute;
 }
 
+
+
+
+
+
 img#logo {
     position: absolute;
     top: -430px;
     left: 23%;
 }
 
-nav
+ul.menu
 {
     background: url(../img/nav.png) no-repeat;
     position: relative;
@@ -51,7 +56,7 @@ nav
     height: 53px;
 }
 
-nav ul li
+ul.menu li
 {
 	font-family:'planting';
 	display:inline-block;
@@ -62,10 +67,16 @@ nav ul li
 }
 
 
-nav ul li a
+ul.menu li a
 {
 	text-decoration:none;
 	color:black;
+}
+
+ul.menu .menu-item-type-custom a{
+    height: 30px;
+    background: url("../img/home.png") no-repeat;
+    width: 28px;
 }
 
 .main
