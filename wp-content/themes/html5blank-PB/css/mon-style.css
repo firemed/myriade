@@ -63,7 +63,7 @@ ul.menu li
     font-size: 1.75rem;
     padding: 0 24px;
 	vertical-align: middle;
-    margin-top: 12px;
+    margin-top: 16px;
 }
 
 
@@ -73,10 +73,13 @@ ul.menu li a
 	color:black;
 }
 
+ul.menu .menu-item-type-custom {
+    margin-top: 10px;
+}
+
 ul.menu .menu-item-type-custom a{
-    height: 30px;
+    padding-right: 30px;
     background: url("../img/home.png") no-repeat;
-    width: 28px;
 }
 
 .main
