@@ -5,13 +5,20 @@
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
         <link href="<?php echo get_template_directory_uri(); ?>/css/mon-style.css" type="text/css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Helvetica">
+<!--        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Helvetica">-->
         <title>Pissenlibleu | <?php _e("Chambre d'hôtes et gîte"); ?></title>
         <link rel="icon" type="image/png" href="img/favicon.jpg" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?php bloginfo('description'); ?>">
+
+        <script SRC="/wp-includes/js/jquery/jquery.js"></script>
+        <!--Slider -->
+        <link href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/nivo-slider.css" type="text/css" rel="stylesheet">
+        <link href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/themes/bar/bar.css" type="text/css" rel="stylesheet">
+        <script SRC="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/jquery.nivo.slider.pack.js"></script>
+
 
 		<?php# wp_head(); ?>
 

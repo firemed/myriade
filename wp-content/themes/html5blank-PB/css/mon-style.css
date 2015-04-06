@@ -1,5 +1,4 @@
 /*
-
     Theme Name: HTML5 Blank-PB
     Theme URI: http://html5blank.com
     Description: HTML5 Blank WordPress Theme
@@ -12,7 +11,7 @@
 
 body{
 	width:1600px;
-	background:url(../img/fond-herbe.jpeg);
+	background:url(../img/fond-herbe.jpeg) fixed;
 	margin:0 auto;
 	font-size:62.5%;
 }
