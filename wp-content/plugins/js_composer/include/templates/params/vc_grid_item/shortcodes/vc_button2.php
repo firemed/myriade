@@ -51,6 +51,9 @@ $link = apply_filters( 'vc_gitem_post_data_get_link_link', $link )
 if ( $align ) {
 	$wrapper_css_class .= ' vc_button-2-align-' . $align;
 }
+// Hack-Workaround pour changer le texte du bouton ... A changer quand on sait comment mieux gérer cela ..
+$title = 'En savoir plus..';
+
 ?>
 	<div class="<?php echo esc_attr( $wrapper_css_class ) ?>">
 		<a <?php echo $link ?>
