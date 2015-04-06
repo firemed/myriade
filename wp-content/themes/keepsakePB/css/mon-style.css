@@ -1,0 +1,144 @@
+/*
+    Theme Name: HTML5 Blank-PB
+    Theme URI: http://html5blank.com
+    Description: HTML5 Blank WordPress Theme
+    Version: 1.4.3
+    Author: Todd Motto (@toddmotto)
+    Author URI: http://toddmotto.com
+    Tags: Blank, HTML5, CSS3
+
+*/
+
+body{
+	background:url(../img/fond-herbe.jpeg) fixed;
+	margin:0 auto;
+	font-size:62.5%;
+}
+
+@font-face {
+    font-family: 'planting';
+    src: url("../fonts/planting-and-seeding-webfont.woff") format('woff'),
+         url('../fonts/planting-and-seeding-webfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'hobo';
+    src: url("../fonts/HoboStd.otf") format('opentype');
+}
+
+
+#photo_header > a {
+    left: 23%;
+    position: absolute;
+}
+
+header{
+    margin:0 auto;
+    text-align:center;
+}
+
+#banner{
+    box-shadow: 10px 0 10px -10px #000000,-10px 0 10px -10px #000000;
+}
+
+
+img#logo {
+    position: absolute;
+    top: -430px;
+    left: 23%;
+}
+
+ul.menu
+{
+    background: url(../img/nav.png) no-repeat;
+    position: relative;
+    top: -12px;
+    height: 53px;
+}
+
+ul.menu li
+{
+	font-family:'planting';
+	display:inline-block;
+    font-size: 1.75rem;
+    padding: 0 24px;
+	vertical-align: middle;
+    margin-top: 16px;
+}
+
+
+ul.menu li a
+{
+	text-decoration:none;
+	color:black;
+}
+
+ul.menu .menu-item-type-custom {
+    margin-top: 10px;
+}
+
+ul.menu .menu-item-type-custom a{
+    padding-right: 30px;
+    background: url("../img/home.png") no-repeat;
+}
+
+.main
+{
+	background:rgba(255,255,255,0.2);
+	margin: 0 auto;
+    width: 62.5%;
+	height:1200px;
+}
+
+#content {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    min-height: 500px;
+    margin: 0 auto;
+	margin-top:5%;
+    padding:20px;
+}
+
+#content > p {
+    font-family: 'hobo';
+    font-size: 1.3rem;
+    padding: 20px;
+    text-align: center;
+    width: 81%;
+    margin: 0 auto;
+    color:black;
+}
+
+#bienvenue{
+    font-size:1.8rem;
+}
+#accroche{
+    text-align:center;
+}
+
+#accroche a:first-child{
+    margin-right:40px;
+}
+
+#footer{
+    text-align: center;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 70px;
+	margin-top:3.5%;
+	
+}
+
+#footer p{
+	font-family:"Helvetica";
+    font-size:1rem;
+	padding-top: 1%;
+	line-height: 1.3rem;
+}
+
+.subfooter{
+    padding: 15px 0;
+    margin-top:15px;
+}

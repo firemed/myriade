@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'planting';
+  src: url("../fonts/planting-and-seeding-webfont.woff") format('woff'),
+  url('../fonts/planting-and-seeding-webfont.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'hobo';
+  src: url("../fonts/HoboStd.otf") format('opentype');
+}
+
+body {
+  width: 1600px;
+  background: url(../img/fond-herbe.jpeg);
+  margin: 0 auto;
+  font-size: 62.5%;
+
+  #photo_header {
+    box-shadow: 10px 0 10px -10px #000000, -10px 0 10px -10px #000000;
+
+    & > a {
+      left: 23%;
+      position: absolute;
+    }
+  }
+
+  img#logo {
+    position: absolute;
+    top: -430px;
+    left: 23%;
+  }
+
+  nav {
+    background: url(../img/nav.png) no-repeat;
+    position: relative;
+    top: -12px;
+    height: 53px;
+
+    ul li {
+      font-family: 'planting';
+      display: inline-block;
+      font-size: 1.75rem;
+      padding: 0 24px;
+      vertical-align: middle;
+      margin-top: 12px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+    }
+
+  }
+
+  .main {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+    width: 62.5%;
+    height: 1200px;
+  }
+
+  #content {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    height: 500px;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 5%;
+
+    &  > p {
+      font-family: 'hobo';
+      font-size: 1.3rem;
+      padding: 20px;
+      text-align: center;
+      width: 81%;
+      margin: 0 auto;
+    }
+
+  }
+
+  #bienvenue {
+    font-size: 1.8rem;
+  }
+  #visiter {
+    position: relative;
+    left: 6%;
+    margin-top: 4%;
+  }
+
+  #liens {
+    position: relative;
+    left: 7%;
+  }
+
+  #liens, #visiter {
+    display: inline-block;
+  }
+
+  #footer {
+    text-align: center;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 70px;
+    margin-top: 3.5%;
+
+    &  p {
+      font-family: "Helvetica";
+      font-size: 1rem;
+      padding-top: 1%;
+      line-height: 1.3rem;
+    }
+
+  }
+
+
+}
