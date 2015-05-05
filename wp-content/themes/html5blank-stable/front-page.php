@@ -4,6 +4,12 @@
     <div id="vertical-gutter" class="item"></div>
     <div id="vertical-gutter" class="item2"></div>
     <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item2"></div>
+    <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item2"></div>
+    <div id="vertical-gutter" class="item"></div>
 </div>
 <?php get_template_part ( 'content', 'home' ); ?>
 <?php get_sidebar(); ?>
