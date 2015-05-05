@@ -305,3 +305,36 @@ a img.aligncenter {
 		page-break-after:avoid;
 	}
 }
+
+
+/* Test Masonry */
+
+.item
+{
+    width:15%;
+    background:url("img/photo_groupe_enfants_parapente.JPG");
+}
+
+.item2
+{
+    width:30%;
+    background:url("img/groupe_enfants.JPG");
+}
+
+#vertical-gutter
+{
+    margin-bottom:10px;
+    height: 15%;
+    width: 15%;
+    background-size:cover;
+}
+
+.item .item2
+{
+    width:500px;
+}
+
+#container
+{
+    height:1000px;
+}

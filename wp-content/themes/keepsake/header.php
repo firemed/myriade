@@ -42,7 +42,7 @@
 			<nav class="collapse navbar-collapse pull-right">
 				<?php
 					if ( has_nav_menu( 'primary' ) ){
-					    wp_nav_menu( 
+					    wp_nav_menu(
 					    	array(
 						        'theme_location'    => 'primary',
 						        'depth'             => 3,
@@ -54,7 +54,7 @@
 						        'walker'            => new ebor_bootstrap_navwalker()
 					        )
 					    );
-						    
+
 					} else {
 						echo '<ul class="nav navbar-nav"><li><a href="'. admin_url('nav-menus.php') .'">Set up a navigation menu now</a></li></ul>';
 					}
