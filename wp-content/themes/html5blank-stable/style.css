@@ -306,49 +306,69 @@ a img.aligncenter {
 	}
 }
 
+/* Ajustements Myriade */
 
+#banner
+{
+    width:100%;
+    height:15%;
+    background:#F9F9F9;
+}
+
+#cercle
+{
+    width:10%;
+    height:10%;
+    background:red;
+    z-index:2;
+}
+
+#logo_banner
+{
+    z-index:3;
+}
 /* Test Masonry */
 
-.item
-{
-    width:15%;
-    height:25%;
-    background:url("img/photo_groupe_enfants_parapente.JPG");
-}
+/*.item*/
+/*{*/
+    /*width:15%;*/
+    /*height:25%;*/
+    /*background:url("img/photo_groupe_enfants_parapente.JPG");*/
+/*}*/
 
-.item2
-{
-    width:30%;
-    height:20%;
-    background:url("img/groupe_enfants.JPG");
-}
+/*.item2*/
+/*{*/
+    /*width:30%;*/
+    /*height:20%;*/
+    /*background:url("img/groupe_enfants.JPG");*/
+/*}*/
 
-#vertical-gutter
-{
-    margin-bottom:10px;
-    background-size:cover;
-}
+/*#vertical-gutter*/
+/*{*/
+    /*margin-bottom:10px;*/
+    /*background-size:cover;*/
+/*}*/
 
-.item3
-{
-    width:40%;
-    height:10%;
-    background:url("img/IMG_9648.JPG");
-}
+/*.item3*/
+/*{*/
+    /*width:40%;*/
+    /*height:10%;*/
+    /*background:url("img/IMG_9648.JPG");*/
+/*}*/
 
-.item4
-{
-    width:20%;
-    height:35%;
-    background:url("img/20131202_145625.jpg");
-}
+/*.item4*/
+/*{*/
+    /*width:20%;*/
+    /*height:35%;*/
+    /*background:url("img/20131202_145625.jpg");*/
+/*}*/
 
 /*.item .item2*/
 /*{*/
     /*width:500px;*/
 /*}*/
 
-#container
-{
-    height:1000px;
-}
+/*#container*/
+/*{*/
+    /*height:1000px;*/
+/*}*/

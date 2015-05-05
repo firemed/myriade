@@ -28,6 +28,14 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+        <header id="banner">
+            <div id="cercle">
+                <div id="logo_banner">
+                    <img src="wp-content/themes/html5blank-stable/img/logo_myriade_banner.jpg">
+                </div>
+            </div>
+        </header>
+
 <!--		<!-- wrapper -->-->
 <!--		<div class="wrapper">-->
 <!---->
