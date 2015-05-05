@@ -3,13 +3,13 @@
 <div id="container" class=js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
     <div id="vertical-gutter" class="item"></div>
     <div id="vertical-gutter" class="item2"></div>
-    <div id="vertical-gutter" class="item"></div>
-    <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item3"></div>
+    <div id="vertical-gutter" class="item4"></div>
     <div id="vertical-gutter" class="item2"></div>
     <div id="vertical-gutter" class="item"></div>
-    <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item3"></div>
     <div id="vertical-gutter" class="item2"></div>
-    <div id="vertical-gutter" class="item"></div>
+    <div id="vertical-gutter" class="item4"></div>
 </div>
 <?php get_template_part ( 'content', 'home' ); ?>
 <?php get_sidebar(); ?>

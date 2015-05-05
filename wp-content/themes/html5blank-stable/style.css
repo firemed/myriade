@@ -312,27 +312,41 @@ a img.aligncenter {
 .item
 {
     width:15%;
+    height:25%;
     background:url("img/photo_groupe_enfants_parapente.JPG");
 }
 
 .item2
 {
     width:30%;
+    height:20%;
     background:url("img/groupe_enfants.JPG");
 }
 
 #vertical-gutter
 {
     margin-bottom:10px;
-    height: 15%;
-    width: 15%;
     background-size:cover;
 }
 
-.item .item2
+.item3
 {
-    width:500px;
+    width:40%;
+    height:10%;
+    background:url("img/IMG_9648.JPG");
 }
+
+.item4
+{
+    width:20%;
+    height:35%;
+    background:url("img/20131202_145625.jpg");
+}
+
+/*.item .item2*/
+/*{*/
+    /*width:500px;*/
+/*}*/
 
 #container
 {
