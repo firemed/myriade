@@ -28,34 +28,34 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-        <header id="banner">
-            <div id="cercle">
-                <div id="logo_banner">
-                    <img src="wp-content/themes/html5blank-stable/img/logo_myriade_banner.jpg">
-                </div>
-            </div>
-        </header>
+    <header>
+        <div id="banner">
+            <svg height="100%" width="100%">
+                <circle cx="10%" cy="20%" r="10%" fill="red" />
+            </svg>
+        </div>
+    </header>
 
-<!--		<!-- wrapper -->-->
-<!--		<div class="wrapper">-->
-<!---->
-<!--			<!-- header -->-->
-<!--			<header class="header clear" role="banner">-->
-<!---->
-<!--					<!-- logo -->-->
-<!--					<div class="logo">-->
-<!--						<a href="--><?php //echo home_url(); ?><!--">-->
-<!--							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->-->
-<!--							<img src="--><?php //echo get_template_directory_uri(); ?><!--/img/logo.svg" alt="Logo" class="logo-img">-->
+<!--		<!-- wrapper -->
+<!--		<div class="wrapper">
+<!--
+<!--			<!-- header -->
+<!--			<header class="header clear" role="banner">
+<!--
+<!--					<!-- logo -->
+<!--					<div class="logo">
+<!--						<a href="--><?php //echo home_url(); ?><!--">
+<!--							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+<!--							<img src="--><?php //echo get_template_directory_uri(); ?><!--/img/logo.svg" alt="Logo" class="logo-img">
 <!--						</a>-->
 <!--					</div>-->
-<!--					<!-- /logo -->-->
-<!---->
-<!--					<!-- nav -->-->
-<!--					<nav class="nav" role="navigation">-->
+<!--					<!-- /logo -->
+<!--
+<!--					<!-- nav -->
+<!--					<nav class="nav" role="navigation">
 <!--						--><?php //html5blank_nav(); ?>
-<!--					</nav>-->
-<!--					<!-- /nav -->-->
-<!---->
-<!--			</header>-->
-<!--			<!-- /header -->-->
+<!--					</nav>
+<!--					<!-- /nav -->
+<!--
+<!--			</header>
+<!--			<!-- /header -->

@@ -308,6 +308,10 @@ a img.aligncenter {
 
 /* Ajustements Myriade */
 
+body
+{
+    height:1400px;
+}
 #banner
 {
     width:100%;
@@ -315,18 +319,25 @@ a img.aligncenter {
     background:#F9F9F9;
 }
 
-#cercle
+header
 {
-    width:10%;
     height:10%;
-    background:red;
-    z-index:2;
+    width:100%;
+    background:blue;
 }
 
-#logo_banner
+svg
 {
-    z-index:3;
+    position:absolute;
 }
+
+/*#logo_banner img*/
+/*{*/
+    /*height:15%;*/
+/*}*/
+
+
+
 /* Test Masonry */
 
 /*.item*/
