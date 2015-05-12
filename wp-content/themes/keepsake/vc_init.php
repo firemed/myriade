@@ -98,6 +98,10 @@ if(!( function_exists('ebor_vc_page_template') )){
 		
 		if(!( isset($post->post_content) ) || is_search())
 			return $template;
+
+        if($template != ''){
+            return $template;
+        }
 			
 		if( has_shortcode($post->post_content, 'vc_row') ){
 			$new_template = locate_template( array( 'page_visual_composer.php' ) );
