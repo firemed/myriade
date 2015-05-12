@@ -1,2 +1,3 @@
 # Liste des fichiers à ignorer pour le git status
 wp-content/uploads/*
+.idea/*
