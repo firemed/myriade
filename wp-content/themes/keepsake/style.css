@@ -763,7 +763,8 @@ blockquote small {
 /*	03. HEADER
 /*-----------------------------------------------------------------------------------*/
 .navbar-header {
-    float: none !important
+    float: none !important;
+    background-color: #F9F9F9;
 }
 .navbar .container {
     padding: 0 0 17px 0;

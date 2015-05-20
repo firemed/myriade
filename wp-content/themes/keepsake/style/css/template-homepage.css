@@ -1,5 +1,11 @@
 #homepage-layout .standard-wrapper{
     padding-top:0 !important;
-    width:100%;
+    /*width:80%;*/
     background-color:white;
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+    #homepage-layout .standard-wrapper{
+        /*width:80%;*/
+    }
 }
