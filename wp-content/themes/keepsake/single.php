@@ -14,7 +14,7 @@
 	 */	
 	$class = ($sidebar_active) ? 'col-sm-8' : 'col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12';
 	
-	echo ebor_page_title( get_option('blog_title','Our Journal') );
+	echo ebor_page_title( get_option('blog_title') );
 ?>
   
 <div id="post-<?php the_ID(); ?>" class="container inner">

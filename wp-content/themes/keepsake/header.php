@@ -28,14 +28,16 @@
 				<a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
 				<div class="navbar-brand">
 					<a href="<?php echo esc_url(home_url('/')); ?>">
-						<img 
-							src="<?php echo esc_url($default); ?>" 
-							alt="<?php echo esc_attr(get_option('custom_logo_alt_text')); ?>" 
-							data-src="<?php echo esc_url($default); ?>" 
-							data-ret="<?php echo esc_url($default_retina); ?>" 
-							class="retina" 
-						/>
+<!--<!--						<img -->
+<!--<!--							src="--><?php ////echo esc_url($default); ?><!--<!--" -->
+<!--<!--							alt="--><?php ////echo esc_attr(get_option('custom_logo_alt_text')); ?><!--<!--" -->
+<!--<!--							data-src="--><?php ////echo esc_url($default); ?><!--<!--" --
+<!--<!--							data-ret="--><?php ////echo esc_url($default_retina); ?><!--<!--" -->
+<!--<!--							class="retina" -->
+<!--<!--						/>-->
+                        <img id="circle-nav" src="wp-content/uploads/2015/05/circle_nav_logo.png">
 					</a>
+                    <p id="slogan">Association d'éducation populaire <br>et d'insertion sociale</p>
 				</div>
 			</div>
 			

@@ -181,6 +181,7 @@ body {
 .container {
     padding-right: 0;
     padding-left: 0;
+    /*background-color:#F9F9F9;*/
 }
 body,
 li,
@@ -371,7 +372,7 @@ footer .sidebox a {
     color: #ef5f60
 }
 .inner {
-    padding-top: 70px;
+    padding-top: 30px;
     padding-bottom: 70px;
 }
 .inner-small {
@@ -3374,4 +3375,28 @@ div.wpcf7 textarea {
 	[class*="col-sm-"].lp30 {
 	    padding-left: 15px
 	}
+}
+
+#circle-nav {
+    position:absolute;
+    /*width: 14%;*/
+    height: 144%;
+    top: 2%;
+    left: 4%;
+}
+
+.dark-wrapper.page-title .container.inner > h1{
+    padding-left:50px;
+}
+
+.standard-wrapper.container.inner{
+    padding-bottom:0;
+    padding-top:30px;
+}
+
+#slogan{
+    font-size: 14px;
+    padding-left: 75px;
+    text-align: center;
+    font-family: cursive;
 }
