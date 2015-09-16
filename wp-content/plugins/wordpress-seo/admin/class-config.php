@@ -1,6 +1,7 @@
 <?php
 /**
- * @package WPSEO\Admin
+ * @package    WPSEO
+ * @subpackage Admin
  */
 
 /**
@@ -60,7 +61,6 @@ class WPSEO_Admin_Pages {
 			'jquery',
 			'jquery-ui-core',
 		), WPSEO_VERSION, true );
-		wp_localize_script( 'wpseo-admin-script', 'wpseoAdminL10n', $this->localize_admin_script() );
 		wp_enqueue_script( 'dashboard' );
 		wp_enqueue_script( 'thickbox' );
 
@@ -93,20 +93,6 @@ class WPSEO_Admin_Pages {
 	public function localize_media_script() {
 		return array(
 			'choose_image' => __( 'Use Image', 'wordpress-seo' ),
-		);
-	}
-
-	/**
-	 * Pass some variables to js for the admin JS module.
-	 *
-	 * %s is replaced with <code>%s</code> and replaced again in the javascript with the actual variable.
-	 *
-	 * @return  array
-	 */
-	public function localize_admin_script() {
-		return array(
-			/* translators: %s: '%%term_title%%' variable used in titles and meta's template that's not compatible with the given template */
-			'variable_warning' => sprintf( __( 'Warning: the variable %s cannot be used in this template.', 'wordpress-seo' ), '<code>%s</code>' ) . ' ' . __( 'See the help tab for more info.', 'wordpress-seo' ),
 		);
 	}
 

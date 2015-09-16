@@ -9,7 +9,6 @@ use Composer\Package\RootPackage;
 use Composer\Package\Link;
 use Composer\Package\Version\VersionParser;
 use Composer\Composer;
-use Composer\Config;
 
 class CakePHPInstallerTest extends TestCase
 {
@@ -26,7 +25,6 @@ class CakePHPInstallerTest extends TestCase
         $this->package = new Package('CamelCased', '1.0', '1.0');
         $this->io = $this->getMock('Composer\IO\PackageInterface');
         $this->composer = new Composer();
-        $this->composer->setConfig(new Config(false));
     }
 
     /**
@@ -63,7 +61,7 @@ class CakePHPInstallerTest extends TestCase
      */
     public function testGetLocations() {
         $package = new RootPackage('CamelCased', '1.0', '1.0');
-        $composer = $this->composer;
+        $composer = new Composer();
         $rm = new RepositoryManager(
             $this->getMock('Composer\IO\IOInterface'),
             $this->getMock('Composer\Config')
@@ -96,11 +94,61 @@ class CakePHPInstallerTest extends TestCase
         // cakephp >= 3.0
         $this->setCakephpVersion($rm, '3.0.*-dev');
         $result = $installer->getLocations();
-        $this->assertContains('vendor/{$vendor}/{$name}/', $result['plugin']);
+        $this->assertContains('plugins/', $result['plugin']);
 
         $this->setCakephpVersion($rm, '~8.8');
         $result = $installer->getLocations();
-        $this->assertContains('vendor/{$vendor}/{$name}/', $result['plugin']);
+        $this->assertContains('plugins/', $result['plugin']);
+    }
+
+    /**
+     * Test if installer-name was set
+     *
+     */
+    public function testGetInstallPath() {
+        $autoload = array(
+            'psr-4' => array(
+                'FOC\\Authenticate' => ''
+            )
+        );
+        $this->package->setAutoload($autoload);
+        $this->package->setType('cakephp-plugin');
+        $rm = new RepositoryManager(
+            $this->getMock('Composer\IO\IOInterface'),
+            $this->getMock('Composer\Config')
+        );
+        $this->composer->setRepositoryManager($rm);
+        $installer = new CakePHPInstaller($this->package, $this->composer);
+
+        $this->setCakephpVersion($rm, '3.0.0');
+        $installer->getInstallPath($this->package, 'cakephp');
+        $extra = $this->package->getExtra();
+        $this->assertEquals('FOC/Authenticate', $extra['installer-name']);
+
+        $autoload = array(
+            'psr-4' => array(
+                'FOC\Acl\Test' => './tests',
+                'FOC\Acl' => ''
+            )
+        );
+        $this->package->setAutoload($autoload);
+        $this->package->setExtra(array());
+        $installer->getInstallPath($this->package, 'cakephp');
+        $extra = $this->package->getExtra();
+        $this->assertEquals('FOC/Acl', $extra['installer-name']);
+
+        $autoload = array(
+            'psr-4' => array(
+                'Foo\Bar' => 'foo',
+                'Acme\Plugin\Test' => 'tests',
+                'Acme\Plugin' => './src'
+            )
+        );
+        $this->package->setAutoload($autoload);
+        $this->package->setExtra(array());
+        $installer->getInstallPath($this->package, 'cakephp');
+        $extra = $this->package->getExtra();
+        $this->assertEquals('Acme/Plugin', $extra['installer-name']);
     }
 
     protected function setCakephpVersion($rm, $version) {

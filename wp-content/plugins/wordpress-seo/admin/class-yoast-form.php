@@ -1,6 +1,7 @@
 <?php
 /**
- * @package WPSEO\Admin
+ * @package    WPSEO
+ * @subpackage Admin
  */
 
 /**
@@ -289,24 +290,14 @@ class Yoast_Form {
 	/**
 	 * Create a Text input field.
 	 *
-	 * @param string       $var   The variable within the option to create the text input field for.
-	 * @param string       $label The label to show for the variable.
-	 * @param array|string $attr  Extra class to add to the input field
+	 * @param string $var   The variable within the option to create the text input field for.
+	 * @param string $label The label to show for the variable.
 	 */
-	public function textinput( $var, $label, $attr = array() ) {
-		if ( ! is_array( $attr ) ) {
-			$attr = array(
-				'class' => $attr,
-			);
-		}
-		$attr = wp_parse_args( $attr, array(
-			'placeholder' => '',
-			'class'       => '',
-		) );
-		$val  = ( isset( $this->options[ $var ] ) ) ? $this->options[ $var ] : '';
+	public function textinput( $var, $label ) {
+		$val = ( isset( $this->options[ $var ] ) ) ? $this->options[ $var ] : '';
 
 		$this->label( $label . ':', array( 'for' => $var ) );
-		echo '<input class="textinput ' . esc_attr( $attr['class'] ) . ' " placeholder="' . esc_attr( $attr['placeholder'] ) . '" type="text" id="', esc_attr( $var ), '" name="', esc_attr( $this->option_name ), '[', esc_attr( $var ), ']" value="', esc_attr( $val ), '"/>', '<br class="clear" />';
+		echo '<input class="textinput" type="text" id="', esc_attr( $var ), '" name="', esc_attr( $this->option_name ), '[', esc_attr( $var ), ']" value="', esc_attr( $val ), '"/>', '<br class="clear" />';
 	}
 
 	/**

@@ -1,9 +1,4 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // disable direct access
-}
-
 /**
  * Flex Slider specific markup, javascript, css and settings.
  */

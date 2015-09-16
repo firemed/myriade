@@ -28,21 +28,23 @@
 				<a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
 				<div class="navbar-brand">
 					<a href="<?php echo esc_url(home_url('/')); ?>">
-						<img 
-							src="<?php echo esc_url($default); ?>" 
-							alt="<?php echo esc_attr(get_option('custom_logo_alt_text')); ?>" 
-							data-src="<?php echo esc_url($default); ?>" 
-							data-ret="<?php echo esc_url($default_retina); ?>" 
-							class="retina" 
-						/>
+<!--<!--						<img -->
+<!--<!--							src="--><?php ////echo esc_url($default); ?><!--<!--" -->
+<!--<!--							alt="--><?php ////echo esc_attr(get_option('custom_logo_alt_text')); ?><!--<!--" -->
+<!--<!--							data-src="--><?php ////echo esc_url($default); ?><!--<!--" --
+<!--<!--							data-ret="--><?php ////echo esc_url($default_retina); ?><!--<!--" -->
+<!--<!--							class="retina" -->
+<!--<!--						/>-->
+                        <img id="circle-nav" src="wp-content/uploads/2015/05/circle_nav_logo.png">
 					</a>
+                    <p id="slogan">Association d'éducation populaire <br>et d'insertion sociale</p>
 				</div>
 			</div>
 			
 			<nav class="collapse navbar-collapse pull-right">
 				<?php
 					if ( has_nav_menu( 'primary' ) ){
-					    wp_nav_menu(
+					    wp_nav_menu( 
 					    	array(
 						        'theme_location'    => 'primary',
 						        'depth'             => 3,
@@ -54,7 +56,7 @@
 						        'walker'            => new ebor_bootstrap_navwalker()
 					        )
 					    );
-
+						    
 					} else {
 						echo '<ul class="nav navbar-nav"><li><a href="'. admin_url('nav-menus.php') .'">Set up a navigation menu now</a></li></ul>';
 					}

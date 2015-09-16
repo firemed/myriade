@@ -1,9 +1,4 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // disable direct access
-}
-
 /**
  * Check for common issues with the server environment and WordPress install.
  */

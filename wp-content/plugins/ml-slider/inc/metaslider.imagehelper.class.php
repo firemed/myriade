@@ -1,9 +1,4 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // disable direct access
-}
-
 /**
  * Helper class for resizing images, returning the correct URL to the image etc
  */

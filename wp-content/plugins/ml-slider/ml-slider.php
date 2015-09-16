@@ -3,11 +3,11 @@
  * Meta Slider. Slideshow plugin for WordPress.
  *
  * Plugin Name: Meta Slider
- * Plugin URI:  https://www.metaslider.com
+ * Plugin URI:  http://www.metaslider.com
  * Description: Easy to use slideshow plugin. Create SEO optimised responsive slideshows with Nivo Slider, Flex Slider, Coin Slider and Responsive Slides.
- * Version:     3.3.2
+ * Version:     3.3
  * Author:      Matcha Labs
- * Author URI:  https://www.metaslider.com
+ * Author URI:  http://www.metaslider.com
  * License:     GPL-2.0+
  * Copyright:   2014 Matcha Labs LTD
  *
@@ -31,7 +31,7 @@ class MetaSliderPlugin {
     /**
      * @var string
      */
-    public $version = '3.3.2';
+    public $version = '3.3';
 
 
     /**
@@ -84,17 +84,17 @@ class MetaSliderPlugin {
     private function plugin_classes() {
 
         return array(
-            'metaslider'             => METASLIDER_PATH . 'inc/slider/metaslider.class.php',
-            'metacoinslider'         => METASLIDER_PATH . 'inc/slider/metaslider.coin.class.php',
-            'metaflexslider'         => METASLIDER_PATH . 'inc/slider/metaslider.flex.class.php',
-            'metanivoslider'         => METASLIDER_PATH . 'inc/slider/metaslider.nivo.class.php',
-            'metaresponsiveslider'   => METASLIDER_PATH . 'inc/slider/metaslider.responsive.class.php',
-            'metaslide'              => METASLIDER_PATH . 'inc/slide/metaslide.class.php',
-            'metaimageslide'         => METASLIDER_PATH . 'inc/slide/metaslide.image.class.php',
-            'metasliderimagehelper'  => METASLIDER_PATH . 'inc/metaslider.imagehelper.class.php',
-            'metaslidersystemcheck'  => METASLIDER_PATH . 'inc/metaslider.systemcheck.class.php',
-            'metaslider_widget'      => METASLIDER_PATH . 'inc/metaslider.widget.class.php',
-            'simple_html_dom'        => METASLIDER_PATH . 'inc/simple_html_dom.php'
+            'metaslider'            => METASLIDER_PATH . 'inc/slider/metaslider.class.php',
+            'metacoinslider'        => METASLIDER_PATH . 'inc/slider/metaslider.coin.class.php',
+            'metaflexslider'        => METASLIDER_PATH . 'inc/slider/metaslider.flex.class.php',
+            'metanivoslider'        => METASLIDER_PATH . 'inc/slider/metaslider.nivo.class.php',
+            'metaresponsiveslider'  => METASLIDER_PATH . 'inc/slider/metaslider.responsive.class.php',
+            'metaslide'             => METASLIDER_PATH . 'inc/slide/metaslide.class.php',
+            'metaimageslide'        => METASLIDER_PATH . 'inc/slide/metaslide.image.class.php',
+            'metasliderimagehelper' => METASLIDER_PATH . 'inc/metaslider.imagehelper.class.php',
+            'metaslidersystemcheck' => METASLIDER_PATH . 'inc/metaslider.systemcheck.class.php',
+            'metaslider_widget'     => METASLIDER_PATH . 'inc/metaslider.widget.class.php',
+            'simple_html_dom'       => METASLIDER_PATH . 'inc/simple_html_dom.php'
         );
 
     }
@@ -172,11 +172,6 @@ class MetaSliderPlugin {
         add_action( 'admin_post_metaslider_preview', array( $this, 'do_preview' ) );
         add_action( 'admin_post_metaslider_hide_go_pro_page', array( $this, 'hide_go_pro_page' ) );
         add_action( 'admin_post_metaslider_switch_view', array( $this, 'switch_view' ) );
-        add_action( 'admin_post_metaslider_delete_slide', array( $this, 'delete_slide' ) );
-        add_action( 'admin_post_metaslider_delete_slider', array( $this, 'delete_slider' ) );
-        add_action( 'admin_post_metaslider_create_slider', array( $this, 'create_slider' ) );
-        add_action( 'admin_post_metaslider_update_slider', array( $this, 'update_slider' ) );
-
 
         if ( defined( 'METASLIDER_ENABLE_RESOURCE_MANAGER' ) && METASLIDER_ENABLE_RESOURCE_MANAGER === true ) {
 
@@ -543,19 +538,8 @@ class MetaSliderPlugin {
             $strings['insertMediaTitle'] = __( "Image", "metaslider" );
             $strings['insertIntoPost'] = __( "Add to slider", "metaslider" );
             // remove options
-
-            $strings_to_remove = array(
-                'createVideoPlaylistTitle', 
-                'createGalleryTitle', 
-                'insertFromUrlTitle', 
-                'createPlaylistTitle'
-            );
-
-            foreach ($strings_to_remove as $string) {
-                if (isset($strings[$string])) {
-                    unset($strings[$string]);
-                }
-            }
+            if ( isset( $strings['createGalleryTitle'] ) ) unset( $strings['createGalleryTitle'] );
+            if ( isset( $strings['insertFromUrlTitle'] ) ) unset( $strings['insertFromUrlTitle'] );
         }
 
         return $strings;
@@ -603,7 +587,7 @@ class MetaSliderPlugin {
             $type = 'flex';
         }
 
-        $this->slider = $this->load_slider( $type, $id, $shortcode_settings );
+        $this->slider = $this->create_slider( $type, $id, $shortcode_settings );
 
     }
 
@@ -611,7 +595,7 @@ class MetaSliderPlugin {
     /**
      * Create a new slider based on the sliders type setting
      */
-    private function load_slider( $type, $id, $shortcode_settings ) {
+    private function create_slider( $type, $id, $shortcode_settings ) {
 
         switch ( $type ) {
             case( 'coin' ):
@@ -630,11 +614,14 @@ class MetaSliderPlugin {
 
 
     /**
-     *
+     * Handle slide uploads/changes.
      */
-    public function update_slider() {
+    public function admin_process() {
 
-        check_admin_referer( "metaslider_update_slider" );
+        // this function should only ever be called from the Meta Slider admin page.
+        if ( ! is_admin() ) {
+            return;
+        }
 
         $capability = apply_filters( 'metaslider_capability', 'edit_others_posts' );
 
@@ -642,126 +629,35 @@ class MetaSliderPlugin {
             return;
         }
 
-        $slider_id = absint( $_POST['slider_id'] );
-
-        if ( ! $slider_id ) {
-            return;
-        }
-
-        // update settings
-        if ( isset( $_POST['settings'] ) ) {
-
-            $new_settings = $_POST['settings'];
-
-            $old_settings = get_post_meta( $slider_id, 'ml-slider_settings', true );
-
-            // convert submitted checkbox values from 'on' or 'off' to boolean values
-            $checkboxes = apply_filters( "metaslider_checkbox_settings", array( 'noConflict', 'fullWidth', 'hoverPause', 'links', 'reverse', 'random', 'printCss', 'printJs', 'smoothHeight', 'center', 'carouselMode', 'autoPlay' ) );
-
-            foreach ( $checkboxes as $checkbox ) {
-                if ( isset( $new_settings[$checkbox] ) && $new_settings[$checkbox] == 'on' ) {
-                    $new_settings[$checkbox] = "true";
-                } else {
-                    $new_settings[$checkbox] = "false";
-                }
-            }
-
-            $settings = array_merge( (array)$old_settings, $new_settings );
-
-            // update the slider settings
-            update_post_meta( $slider_id, 'ml-slider_settings', $settings );
-
-        }
-
-        // update slideshow title
-        if ( isset( $_POST['title'] ) ) {
-
-            $slide = array(
-                'ID' => $slider_id,
-                'post_title' => esc_html( $_POST['title'] )
-            );
-
-            wp_update_post( $slide );
-
-        }
-
-        // update individual slides
-        if ( isset( $_POST['attachment'] ) ) {
-
-            foreach ( $_POST['attachment'] as $slide_id => $fields ) {
-                do_action( "metaslider_save_{$fields['type']}_slide", $slide_id, $slider_id, $fields );
-            }
-
-        }
-
-    }
-
-
-    /**
-     * Delete a slide. This doesn't actually remove the slide from WordPress, simply untags
-     * it from the slide taxonomy.
-     */
-    public function delete_slide() {
-
-        // check nonce
-        check_admin_referer( "metaslider_delete_slide" );
-
-        $capability = apply_filters( 'metaslider_capability', 'edit_others_posts' );
-
-        if ( ! current_user_can( $capability ) ) {
-            return;
-        }
-
-        $slide_id = absint( $_GET['slide_id'] );
-        $slider_id = absint( $_GET['slider_id'] );
-
-        // Get the existing terms and only keep the ones we don't want removed
-        $new_terms = array();
-        $current_terms = wp_get_object_terms( $slide_id, 'ml-slider', array( 'fields' => 'ids' ) );
-        $term = get_term_by( 'name', $slider_id, 'ml-slider' );
-
-        foreach ( $current_terms as $current_term ) {
-            if ( $current_term != $term->term_id ) {
-                $new_terms[] = absint( $current_term );
-            }
-        }
-
-        wp_set_object_terms( $slide_id, $new_terms, 'ml-slider' );
-
-        wp_redirect( admin_url( "admin.php?page=metaslider&id={$slider_id}" ) );
-
-    }
-
-
-    /**
-     * Delete a slider (send it to trash)
-     */
-    public function delete_slider() {
-
-        // check nonce
-        check_admin_referer( "metaslider_delete_slider" );
-
-        $capability = apply_filters( 'metaslider_capability', 'edit_others_posts' );
-
-        if ( ! current_user_can( $capability ) ) {
-            return;
-        }
-
-        $slider_id = absint( $_GET['slider_id'] );
-
-        // send the post to trash
-        $id = wp_update_post( array(
-                'ID' => $slider_id,
-                'post_status' => 'trash'
-            )
-        );
-
+        // default to the latest slider
         $slider_id = $this->find_slider( 'modified', 'DESC' );
 
-        wp_redirect( admin_url( "admin.php?page=metaslider&id={$slider_id}" ) );
+        // delete a slider
+        if ( isset( $_GET['delete'] ) ) {
+            $slider_id = $this->delete_slider( absint( $_GET['delete'] ) );
+        }
+
+        // load a slider by ID
+        if ( isset( $_REQUEST['id'] ) ) {
+            $temp_id = absint( $_REQUEST['id'] );
+
+            // check valid post ID
+            if ( get_post( $temp_id ) ) {
+                $slider_id = $temp_id;
+            }
+        }
+
+        // create a new slider
+        if ( isset( $_GET['add'] ) ) {
+            $slider_id = $this->add_slider();
+        }
+
+        // finally, set the slider
+        if ( $slider_id > 0 ) {
+            $this->set_slider( $slider_id );
+        }
 
     }
-
 
     /**
      *
@@ -787,20 +683,13 @@ class MetaSliderPlugin {
 
     }
 
-
     /**
      * Create a new slider
      */
-    public function create_slider() {
+    private function add_slider() {
 
         // check nonce
-        check_admin_referer( "metaslider_create_slider" );
-
-        $capability = apply_filters( 'metaslider_capability', 'edit_others_posts' );
-
-        if ( ! current_user_can( $capability ) ) {
-            return;
-        }
+        check_admin_referer( "metaslider_add_slider" );
 
         $defaults = array();
 
@@ -829,10 +718,31 @@ class MetaSliderPlugin {
         // create the taxonomy term, the term is the ID of the slider itself
         wp_insert_term( $id, 'ml-slider' );
 
-        wp_redirect( admin_url( "admin.php?page=metaslider&id={$id}" ) );
+        return $id;
 
     }
 
+
+    /**
+     * Delete a slider (send it to trash)
+     *
+     * @param int $id
+     */
+    private function delete_slider( $id ) {
+
+        // check nonce
+        check_admin_referer( "metaslider_delete_slider" );
+
+        // send the post to trash
+        wp_update_post( array(
+                'ID' => $id,
+                'post_status' => 'trash'
+            )
+        );
+
+        return $this->find_slider( 'date', 'DESC' );
+
+    }
 
 
     /**
@@ -875,7 +785,7 @@ class MetaSliderPlugin {
      * @param string $sort_key
      * @return array all published sliders
      */
-    public function all_meta_sliders( $sort_key = 'date' ) {
+    private function all_meta_sliders( $sort_key = 'date' ) {
 
         $sliders = array();
 
@@ -1095,7 +1005,7 @@ class MetaSliderPlugin {
     public function print_slideshow_selector() {
         global $user_ID;
 
-        $add_url = wp_nonce_url( admin_url( "admin-post.php?action=metaslider_create_slider" ), "metaslider_create_slider" );
+        $add_url = wp_nonce_url( "?page=metaslider&amp;add=true", "metaslider_add_slider" );
 
         if ( $tabs = $this->all_meta_sliders() ) {
 
@@ -1180,24 +1090,7 @@ class MetaSliderPlugin {
      */
     public function render_admin_page() {
         
-        // default to the latest slider
-        $slider_id = $this->find_slider( 'modified', 'DESC' );
-
-        // load a slider by ID
-        if ( isset( $_REQUEST['id'] ) ) {
-            $temp_id = absint( $_REQUEST['id'] );
-
-            // check valid post ID
-            if ( get_post( $temp_id ) ) {
-                $slider_id = $temp_id;
-            }
-        }
-
-        // finally, set the slider
-        if ( $slider_id > 0 ) {
-            $this->set_slider( $slider_id );
-        }
-
+        $this->admin_process();
         $this->upgrade_to_pro_cta();
         $this->do_system_check();
 
@@ -1210,15 +1103,18 @@ class MetaSliderPlugin {
         </script>
 
         <div class="wrap metaslider">
-            <form accept-charset="UTF-8" action="<?php echo admin_url( 'admin-post.php'); ?>" method="post">
-                <input type="hidden" name="action" value="metaslider_update_slider">
-                <input type="hidden" name="slider_id" value="<?php echo $slider_id; ?>">
-                <?php wp_nonce_field( 'metaslider_update_slider' ); ?>
+            <form accept-charset="UTF-8" action="?page=metaslider&amp;id=<?php echo $slider_id ?>" method="post">
+                <?php
+                    if ( $this->slider ) {
+                        wp_nonce_field( 'metaslider_save_' . $this->slider->id );
+                    }
 
-                <?php $this->print_slideshow_selector(); ?>
+                    $this->print_slideshow_selector();
 
-                <?php if ( ! $this->slider ) return; ?>
-
+                    if ( ! $this->slider ) {
+                        return;
+                    }
+                ?>
                 <div id='poststuff'>
                     <div id='post-body' class='metabox-holder columns-2'>
 
@@ -1716,9 +1612,7 @@ class MetaSliderPlugin {
 
                                 <?php endif; ?>
 
-                                <?php $url = wp_nonce_url( admin_url( "admin-post.php?action=metaslider_delete_slider&amp;slider_id={$this->slider->id}" ), "metaslider_delete_slider" ); ?>
-
-                                <a class='delete-slider alignright button-secondary' href='<?php echo $url ?>'><?php _e( "Delete Slider", "metaslider" ) ?></a>
+                                <a class='delete-slider alignright button-secondary' href='<?php echo wp_nonce_url( "?page=metaslider&amp;delete={$this->slider->id}", "metaslider_delete_slider" ); ?>'><?php _e( "Delete Slider", "metaslider" ) ?></a>
                             </div>
                         </div>
                     </div>
@@ -1733,12 +1627,6 @@ class MetaSliderPlugin {
      * Append the 'Add Slider' button to selected admin pages
      */
     public function insert_metaslider_button( $context ) {
-
-        $capability = apply_filters( 'metaslider_capability', 'edit_others_posts' );
-
-        if ( ! current_user_can( $capability ) ) {
-            return $context;
-        }
 
         global $pagenow;
 

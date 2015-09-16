@@ -1,9 +1,4 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // disable direct access
-}
-
 /**
  * Override parent 'MetaSlider' class with CoinSlider specific markup,
  * javascript, css and settings.

@@ -1,6 +1,7 @@
 <?php
 /**
- * @package WPSEO\Admin\Bulk Editor
+ * @package    WPSEO
+ * @subpackage Admin
  * @since      1.5.0
  */
 

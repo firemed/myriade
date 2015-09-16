@@ -1,6 +1,7 @@
 <?php
 /**
- * @package WPSEO\Internals
+ * @package    WPSEO
+ * @subpackage Internals
  */
 
 if ( ! defined( 'WPSEO_VERSION' ) ) {

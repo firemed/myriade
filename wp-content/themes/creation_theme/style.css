@@ -1,0 +1,12 @@
+/* Theme Name: creation_theme */
+
+body
+{
+	margin:0;
+	background-color:#C96;
+}
+
+#header1
+{
+	background-color:red;
+}

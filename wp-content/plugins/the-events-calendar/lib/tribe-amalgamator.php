@@ -269,7 +269,7 @@ class Tribe_Amalgamator {
 				), admin_url( 'edit.php' )
 			)
 		);
-		$url  = esc_url( add_query_arg( array( 'amalgamate' => '1' ), $url ) );
+		$url  = add_query_arg( array( 'amalgamate' => '1' ), $url );
 		$url  = wp_nonce_url( $url, 'amalgamate_duplicates' );
 		$html = sprintf( $html, $url, $text );
 
@@ -299,7 +299,7 @@ class Tribe_Amalgamator {
 				), admin_url( 'edit.php' )
 			)
 		);
-		wp_redirect( esc_url_raw( $url ) );
+		wp_redirect( $url );
 		exit();
 	}
 }

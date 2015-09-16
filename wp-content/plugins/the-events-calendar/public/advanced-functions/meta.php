@@ -325,7 +325,7 @@ if ( class_exists( 'Tribe_Meta_Factory' ) ) {
 		public static function gmap_link() {
 			$link = sprintf(
 				'<a class="tribe-events-gmap" href="%s" title="%s" target="_blank">%s</a>',
-				esc_url( tribe_get_map_link() ),
+				tribe_get_map_link(),
 				__( 'Click to view a Google Map', 'tribe-events-calendar' ),
 				__( '+ Google Map', 'tribe-events-calendar' )
 			);
