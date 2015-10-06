@@ -36,8 +36,8 @@
 							wp_link_pages();
 							the_tags('<div class="meta tags">',', ','</div>');
 							
-							if( '1' == get_option('blog_social','1') )
-								get_template_part('inc/content','sharing');
+//							if( '1' == get_option('blog_social','1') )
+//								get_template_part('inc/content','sharing');
 						?>
 					</div>
 					
