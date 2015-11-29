@@ -3377,6 +3377,8 @@ div.wpcf7 textarea {
 	}
 }
 
+/* CUSTOM CSS */
+
 #circle-nav {
     position:absolute;
     /*width: 14%;*/
@@ -3399,4 +3401,8 @@ div.wpcf7 textarea {
     padding-left: 75px;
     text-align: center;
     font-family: cursive;
+}
+
+.vc_grid-filter > li.vc_grid-filter-item-33{
+    display:none;
 }

@@ -11,7 +11,7 @@ if ( $atts['show_filter'] === 'yes' && ! empty( $filter_terms ) ):
 	)) : array();
 	if( $atts['filter_style'] != 'dropdown' ): ?>
 	<ul class="vc_grid-filter vc_clearfix vc_grid-filter-<?php echo esc_attr( $atts['filter_style'] ); ?> vc_grid-filter-size-<?php echo esc_attr( $atts['filter_size'] ); ?> vc_grid-filter-<?php echo esc_attr( $atts['filter_align'] ); ?> vc_grid-filter-color-<?php echo esc_attr( $atts['filter_color'] ); ?>" data-vc-grid-filter="<?php echo esc_attr( $atts['filter_source'] ) ?>"><li class="vc_active vc_grid-filter-item"><span data-vc-grid-filter-value="*"><?php _e( 'All', 'js_composer' ); ?></span></li><!-- fix whitespace
-				!--><?php foreach ( $terms as $term ): ?><li class="vc_grid-filter-item"><span data-vc-grid-filter-value=".vc_grid-term-<?php echo $term->term_id; ?>"><?php esc_attr_e( $term->name ); ?></span></li><?php endforeach; ?></ul>
+				!--><?php foreach ( $terms as $term ): ?><li class="vc_grid-filter-item vc_grid-filter-item-<?php echo $term->term_id; ?>"><span data-vc-grid-filter-value=".vc_grid-term-<?php echo $term->term_id; ?>"><?php esc_attr_e( $term->name ); ?></span></li><?php endforeach; ?></ul>
 	<?php endif; ?>
 <!-- for responsive vc_responsive !-->
 <div class="<?php echo $atts['filter_style'] == 'dropdown' ? 'vc_grid-filter-dropdown':'vc_grid-filter-select'; ?> vc_grid-filter-<?php echo esc_attr($atts['filter_align']); ?> vc_grid-filter-color-<?php echo esc_attr( $atts['filter_color'] ); ?>" data-vc-grid-filter-select="<?php echo esc_attr( $atts['filter_source'] ) ?>">
