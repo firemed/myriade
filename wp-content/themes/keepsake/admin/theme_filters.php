@@ -256,7 +256,7 @@ if(!( function_exists('ebor_post_gallery') )){
 	    								<h3>'. $details->post_title .'</h3>
 	    								'. wpautop(do_shortcode(htmlspecialchars_decode($details->post_content))).'
 	    							</div>
-	    							<div class="col-sm-8">
+	    							<div class="col-sm-8 ">
 	    								<figure>
 	    									' . wp_get_attachment_image($id, 'full') . '
 	    								</figure>

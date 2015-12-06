@@ -29,10 +29,20 @@
 						get_template_part('inc/content','meta');
 						the_title('<h1 class="post-title">', '</h1>'); 
 					?>
-					
 					<div class="post-content">
+
+                        <?php
+                        $data = get_post();
+                        $url = wp_get_attachment_url( get_post_thumbnail_id($data->ID) , 'large');
+                        #print_r($url);
+                        #print_r($data);exit();
+                        ?>
+                        <p>
+                                <img class="alignnone size-medium " src="<?php echo $url ; ?>" alt="" width="300" height="225">
+                            <?php echo $data->post_title; ?></p>
+
 						<?php
-							the_content();
+							#the_content();
 							wp_link_pages();
 							the_tags('<div class="meta tags">',', ','</div>');
 							
