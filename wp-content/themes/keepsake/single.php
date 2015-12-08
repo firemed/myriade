@@ -1,5 +1,7 @@
 <?php
 	get_header();
+    $post_object = get_post();
+    $post_title = $post_object->post_title;
 	the_post();
 	
 	/**
@@ -14,10 +16,22 @@
 	 */	
 	$class = ($sidebar_active) ? 'col-sm-8' : 'col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12';
 	
-	echo ebor_page_title( get_option('blog_title') );
+	echo ebor_page_title(
+        $post_title
+//        get_option('blog_title').'test'.the_title()
+    );
 ?>
+
   
 <div id="post-<?php the_ID(); ?>" class="container inner">
+    <div class="breadcrumb">
+        <?php
+        if(function_exists('bcn_display'))
+        {
+            bcn_display();
+        }
+        ?>
+    </div>
 	<div class="row">
 	
 		<div class="<?php echo esc_attr($class); ?> content">
@@ -33,16 +47,8 @@
 
                         <?php
                         $data = get_post();
-                        $url = wp_get_attachment_url( get_post_thumbnail_id($data->ID) , 'large');
-                        #print_r($url);
-                        #print_r($data);exit();
-                        ?>
-                        <p>
-                                <img class="alignnone size-medium " src="<?php echo $url ; ?>" alt="" width="300" height="225">
-                            <?php echo $data->post_title; ?></p>
-
-						<?php
-							#the_content();
+//                        $url = wp_get_attachment_url( get_post_thumbnail_id($data->ID) , 'large');
+							the_content();
 							wp_link_pages();
 							the_tags('<div class="meta tags">',', ','</div>');
 							

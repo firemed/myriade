@@ -7,6 +7,14 @@
 ?>
   
 	<div id="page-<?php the_ID(); ?>" class="container inner <?php echo $class; ?>">
+        <div class="breadcrumb">
+            <?php
+            if(function_exists('bcn_display'))
+            {
+                bcn_display();
+            }
+            ?>
+        </div>
 		<?php
 			the_content();
 			wp_link_pages();

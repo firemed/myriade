@@ -3406,3 +3406,14 @@ div.wpcf7 textarea {
 .vc_grid-filter > li.vc_grid-filter-item-33{
     display:none;
 }
+
+div.breadcrumb{
+    background-color:transparent;
+    padding-left:0;
+}
+
+.category-breadcrumb-wrapper div.breadcrumb{
+    margin:0;
+    padding-top: 35px;
+    margin-bottom: -10px;
+}
