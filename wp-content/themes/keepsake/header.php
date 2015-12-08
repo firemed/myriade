@@ -35,7 +35,7 @@
 <!--<!--							data-ret="--><?php ////echo esc_url($default_retina); ?><!--<!--" -->
 <!--<!--							class="retina" -->
 <!--<!--						/>-->
-                        <img id="circle-nav" src="/wp-content/uploads/2015/05/circle_nav_logo.png">
+                        <img id="circle-nav" src="/wp-content/uploads/2015/12/logo_myriade_banner_propre.png">
 					</a>
                     <p id="slogan">Association d'éducation populaire <br>et d'insertion sociale</p>
 				</div>
