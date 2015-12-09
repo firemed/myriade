@@ -366,7 +366,9 @@ if(!( function_exists('ebor_load_scripts') )){
 		//Enqueue Styles
 		wp_enqueue_style( 'ebor-bootstrap', EBOR_THEME_DIRECTORY . 'style/css/bootstrap.min.css' );
 		wp_enqueue_style( 'ebor-plugins', EBOR_THEME_DIRECTORY . 'style/css/plugins.css' );
-		
+		wp_enqueue_style( 'lightbox', EBOR_THEME_DIRECTORY . 'mehdi/lightbox/dist/css/lightbox.css' );
+
+
 		if (class_exists('Woocommerce'))
 			wp_enqueue_style( 'ebor-woocommerce', EBOR_THEME_DIRECTORY . 'style/css/woocommerce.css' );
 			
@@ -382,11 +384,15 @@ if(!( function_exists('ebor_load_scripts') )){
 		wp_enqueue_script( 'ebor-bootstrap', EBOR_THEME_DIRECTORY . 'style/js/bootstrap.min.js', array('jquery'), false, true  );
 		wp_enqueue_script( 'ebor-plugins', EBOR_THEME_DIRECTORY . 'style/js/plugins.js', array('jquery'), false, true  );
 		wp_enqueue_script( 'ebor-scripts', EBOR_THEME_DIRECTORY . 'style/js/scripts.js', array('jquery'), false, true  );
-		
+		wp_enqueue_script( 'lightbox', EBOR_THEME_DIRECTORY . 'mehdi/lightbox/dist/js/lightbox.js', array('jquery'), false, true);
+
+
 		//Enqueue Comments
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+        wp_enqueue_style( 'custom', EBOR_THEME_DIRECTORY . 'mehdi/custom.css' );
+        wp_enqueue_script( 'custom', EBOR_THEME_DIRECTORY . 'mehdi/custom.js');
 		
 		/**
 		 * Variables

@@ -1,0 +1,45 @@
+/* CUSTOM CSS */
+
+#circle-nav {
+    position:absolute;
+    /*width: 14%;*/
+    height: 144%;
+    top: 2%;
+    left: 4%;
+}
+
+.dark-wrapper.page-title .container.inner > h1{
+    padding-left:50px;
+}
+
+.standard-wrapper.container.inner{
+    padding-bottom:0;
+    padding-top:30px;
+}
+
+#slogan{
+    font-size: 14px;
+    padding-left: 75px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.vc_grid-filter > li.vc_grid-filter-item-33{
+    display:none;
+}
+
+div.breadcrumb{
+    background-color:transparent;
+    padding-left:0;
+}
+
+.category-breadcrumb-wrapper div.breadcrumb{
+    margin:0;
+    padding-top: 35px;
+    margin-bottom: -10px;
+}
+
+div hr{
+    padding-bottom:0px;
+    margin-bottom:20px !important;
+}
