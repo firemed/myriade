@@ -1,26 +1,32 @@
 <?php
 $data = get_post();
-$url = wp_get_attachment_url( get_post_thumbnail_id($data->ID) , 'medium');
-$urlbig = wp_get_attachment_url( get_post_thumbnail_id($data->ID) , 'large');
+
+// Accède aux données complète de l'image liées au POST :
+//$image_post = wp_get_attachment_metadata( get_post_thumbnail_id($data->ID) );
+//$url_medium =  $image_post['sizes']['square'];
+//$url_big =  $image_post['sizes']['large'];
+
+// A contrario, récupère directement l'url en fonction de la taille, plus simple.
+$url_medium =  wp_get_attachment_image_src( get_post_thumbnail_id($data->ID) , 'medium' );
+$url_big =  wp_get_attachment_image_src( get_post_thumbnail_id($data->ID) , 'large' );
 $posttype = get_post_type()
 ?>
 
 <p>
-    <a href="<?php echo $urlbig; ?>" data-lightbox="category">
+    <a href="<?php echo $url_big[0]; ?>" data-lightbox="category">
 <?php
-if(empty($url)){
+if(empty($url_medium)){
     ?>
 <?php
 } else {
     ?>
-    <img class="alignnone size-medium " src="<?php echo $url ; ?>" alt="" width="300" height="225">
+    <img class="alignnone size-medium " src="<?php echo $url_medium[0] ; ?>" alt="" width="300" height="225">
 <?php
 }
-//print_r($data);
-
 ?>
 
 </a>
+    
 <?php
     if( 'page' == $posttype ){
     } else {
