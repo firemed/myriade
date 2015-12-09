@@ -43,3 +43,45 @@ div hr{
     padding-bottom:0px;
     margin-bottom:20px !important;
 }
+
+.bloc-content-category-list-page-article .img_background{
+    width:100%;
+    height:250px;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+div.col-md-4.bloc-content-category-list-page-article .post-title{
+    height:60px;
+}
+
+div.post-content{
+    margin-bottom:20px;
+    padding-bottom:20px;
+}
+.excerpt-format{
+    padding:20px;
+    text-align:center;
+    height: 92px;
+}
+
+.pink_button{
+    background-color: #f4524d;
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none !important;
+    padding: 9px 12px;
+    font-size: 100%;
+    line-height: 20px;
+    border-radius: 4px;
+}
+
+.pink_button:hover{
+    background-color: #f23630;
+    color: #f7f7f7 !important;
+}
+
+.button_container{
+    text-align:right;
+}
