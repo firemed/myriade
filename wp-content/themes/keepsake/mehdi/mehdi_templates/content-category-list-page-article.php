@@ -7,8 +7,8 @@
     //$url_big =  $image_post['sizes']['large'];
 
     // A contrario, récupère directement l'url en fonction de la taille, plus simple.
-    $url_medium = wp_get_attachment_image_src( get_post_thumbnail_id($data->ID) , 'medium' );
-    $url_big = wp_get_attachment_image_src( get_post_thumbnail_id($data->ID) , 'large' );
+//    $url_medium = wp_get_attachment_image_src( get_post_thumbnail_id($data->ID) , 'medium' );
+    $url_medium = $url_big = wp_get_attachment_image_src( get_post_thumbnail_id($data->ID) , 'large' );
     $posttype = get_post_type()
 ?>
 <div class="col-md-4 bloc-content-category-list-page-article">
