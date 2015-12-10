@@ -3,7 +3,7 @@
 	
 <!--		<div class="col-sm-8 content">-->
 			
-			<div class="blog-posts classic-blog classic-blog-index">
+			<div class="blog-posts classic-blog classic-blog-index row">
 				<?php 
 					if ( have_posts() ) : while ( have_posts() ) : the_post();
 						
