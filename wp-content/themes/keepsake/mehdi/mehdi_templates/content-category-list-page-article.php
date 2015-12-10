@@ -21,14 +21,21 @@
             <div class="col-md-12 col-sm-6 div_photo">
             <?php
                 // section image
+                $xtraClass = '';
                 if(empty($url_medium)){
                     $url_medium = array();
                     $url_medium[] = "/wp-content/uploads/2015/12/visuel_page.png";
                 } else {
+                    $xtraClass = 'custom_transition';
                     ?> <a href="<?php echo $url_big[0]; ?>" data-lightbox="category"><?php
                 }
                 ?>
-                    <div class="img_background" style="background-image:url('<?php echo $url_medium[0] ; ?>'); padding-bottom:20px;"> </div>
+                    <div class="img_background <?php echo $xtraClass; ?>" style="background-image:url('<?php echo $url_medium[0] ; ?>'); padding-bottom:20px;">
+                        <div class="mask">
+                            <span class="info"></span>
+                        </div>
+                    </div>
+
                 <?php
                     if(!empty($url_medium)){
                         ?>

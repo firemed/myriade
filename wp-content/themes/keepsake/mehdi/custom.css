@@ -45,11 +45,29 @@ div.breadcrumb{
 /*}*/
 
 .bloc-content-category-list-page-article .img_background{
-    width:100%;
-    height:250px;
+    /*width:100%;*/
+    height:300px;
     background-size:cover;
+    /*background-size:100%;*/
     background-repeat:no-repeat;
     background-position:center center;
+}
+
+.custom_transition{
+
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.button_container{
+    text-align:right;
+}
+
+.post-title{
+    height:60px;
 }
 
 div.post-content{
@@ -60,12 +78,6 @@ div.post-content{
     padding:20px;
     text-align:center;
     height: 92px;
-}
-
-@media screen and (min-width:991px) and (max-width:1200px) {
-    .excerpt-format{
-        padding:10px;
-    }
 }
 
 .pink_button{
@@ -80,12 +92,57 @@ div.post-content{
     border-radius: 4px;
 }
 
-.button_container{
-    text-align:right;
+.pink_button:hover{
+    background-color: #f23630;
+    color: #f7f7f7 !important;
 }
 
-.post-title{
-    height:60px;
+/* MEDIA QUERIES */
+
+@media screen and (min-width:992px){
+    .custom_transition .mask {
+        opacity: 0;
+        overflow: visible;
+        border: 150px solid rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
+        transition: all 0.4s ease-in-out;
+        height: 300px;
+        text-align:center;
+    }
+
+    .custom_transition .info {
+        background: url("/wp-content/themes/keepsake/mehdi/img/loupe.png") center no-repeat;
+        display: inline-block;
+        text-decoration: none;
+        padding: 0;
+        text-indent: -9999px;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: -10px;
+        opacity: 0;
+        transition: opacity 0.5s 0s ease-in-out;
+    }
+
+    .img_background.custom_transition:hover .mask {
+        opacity: 1;
+        border: 150px solid rgba(0, 0, 0, 0.7);
+    }
+
+    .img_background.custom_transition:hover .info {
+        opacity: 1;
+        transition-delay: 0.3s;
+    }
+
+    .button_container{
+        padding-right:4%;
+    }
+}
+
+@media screen and (min-width:991px) and (max-width:1200px) {
+    .excerpt-format{
+        padding:10px;
+    }
 }
 
 @media screen and (min-width:768px) and (max-width:992px) {
@@ -124,7 +181,7 @@ div.post-content{
         text-align:center;
     }
     div.col-md-4.bloc-content-category-list-page-article .post-title{
-        height:30px;
+        height:45px;
     }
 }
 
@@ -132,10 +189,6 @@ div.post-content{
     div.col-md-4.bloc-content-category-list-page-article .post-title {
         height: 55px;
     }
-}
-.pink_button:hover{
-    background-color: #f23630;
-    color: #f7f7f7 !important;
 }
 
 
