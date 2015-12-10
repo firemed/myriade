@@ -17,11 +17,28 @@
     padding-top:30px;
 }
 
+.navbar .container{
+    padding:0 !important;
+}
+
+#menu-standard-navigation{
+    margin: 30px 0;
+}
+
 #slogan{
     font-size: 14px;
-    padding-left: 75px;
+    /*padding-left: 75px;*/
+    margin-bottom:0;
+    padding-top:35px;
     text-align: center;
     font-family: cursive;
+}
+
+
+@media screen and (max-width:992px){
+    #slogan{
+        padding-top:50px;
+    }
 }
 
 .vc_grid-filter > li.vc_grid-filter-item-33{

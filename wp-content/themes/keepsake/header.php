@@ -26,21 +26,20 @@
 		
 			<div class="basic-wrapper"> 
 				<a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
-				<div class="navbar-brand">
-					<a href="<?php echo esc_url(home_url('/')); ?>">
-<!--<!--						<img -->
-<!--<!--							src="--><?php ////echo esc_url($default); ?><!--<!--" -->
-<!--<!--							alt="--><?php ////echo esc_attr(get_option('custom_logo_alt_text')); ?><!--<!--" -->
-<!--<!--							data-src="--><?php ////echo esc_url($default); ?><!--<!--" --
-<!--<!--							data-ret="--><?php ////echo esc_url($default_retina); ?><!--<!--" -->
-<!--<!--							class="retina" -->
-<!--<!--						/>-->
-                        <img id="circle-nav" src="/wp-content/uploads/2015/12/logo_myriade_banner_propre.png">
-					</a>
-                    <p id="slogan">Association d'éducation populaire <br>et d'insertion sociale</p>
-				</div>
-			</div>
-			
+
+                <div class="navbar-brand">
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
+
+                        <img id="circle-nav" src="<?php echo esc_url($default); ?>">
+
+                    </a>
+                </div>
+<!--                <img id="circle-nav" src="--><?php //echo esc_url($default); ?><!--">-->
+
+            </div>
+
+            <p id="slogan" class="sm-hide">Association d'éducation populaire et d'insertion sociale</p>
+
 			<nav class="collapse navbar-collapse pull-right">
 				<?php
 					if ( has_nav_menu( 'primary' ) ){
@@ -62,8 +61,11 @@
 					}
 				?>
 			</nav>
+<!--            <p id="slogan">Association d'éducation populaire <br>et d'insertion sociale</p>-->
 		
 		</div>
+
 	</div>
 </div>
+
 <div class="offset"></div>
