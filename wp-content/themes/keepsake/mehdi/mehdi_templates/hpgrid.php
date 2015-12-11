@@ -18,12 +18,13 @@
             <div class="col-md-12 div_photo">
             <?php
                 // section image
-                $xtraClass = '';
+//                $xtraClass = '';
+                $xtraClass = 'custom_transition';
                 if(empty($url_medium)){
                     $url_medium = array();
                     $url_medium[] = "/wp-content/uploads/2015/12/visuel_page.png";
                 } else {
-                    $xtraClass = 'custom_transition';
+
                 }
             ?>
             <a href="<?php echo $data->guid; ?>">
