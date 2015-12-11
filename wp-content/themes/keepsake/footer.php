@@ -1,9 +1,9 @@
 <?php $protocols = array(  'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet', 'skype' ); ?>
 
-<footer class="footer black-wrapper">
+<footer class="custom_footer footer black-wrapper">
 	
 	<?php if( is_active_sidebar('footer1') ) : ?>
-		<div class="container inner footer-row">
+		<div class="container inner footer-row ">
 		  <div class="row">
 		  	
 		  	<?php 
@@ -45,5 +45,6 @@
 </div>
 
 <?php wp_footer(); ?>
+</div> <!-- wrapper footer-->
 </body>
 </html>

@@ -8,7 +8,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
-
+<div class="wrapper_footer">
 <body <?php body_class('full-layout'); ?>>
 
 <?php 

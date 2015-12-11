@@ -1,5 +1,9 @@
 /* CUSTOM CSS */
 
+html, body {
+    height:100%;
+}
+
 #circle-nav {
     position:absolute;
     /*width: 14%;*/
@@ -119,6 +123,24 @@ div.post-content{
 .pink_button:hover{
     background-color: #f23630;
     color: #f7f7f7 !important;
+}
+
+.wrapper_footer{
+    position: relative;
+    min-height:100%;
+    padding-bottom: 130px;
+}
+
+.custom_footer{
+    height:130px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width:100%;
+}
+
+footer div.container.inner.text-center.subfooter{
+     padding-bottom:0px;
 }
 
 /* MEDIA QUERIES */
