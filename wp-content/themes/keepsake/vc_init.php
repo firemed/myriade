@@ -159,8 +159,13 @@ if(!( function_exists('ebor_code_shortcode') ))
 	
 if(!( function_exists('ebor_map_shortcode') ))
 	require_once('vc_blocks/vc_map_block.php');
-	
-	
+
+/** custom_shortcode */
+
+if(!( function_exists('ebor_alert_shortcode') ))
+    require_once('mehdi/shortcode/mehdi_hpgrid_shortcode.php');
+    new Mehdi_hpgrid();
+
 /**
  * VC Templates below here.
  */

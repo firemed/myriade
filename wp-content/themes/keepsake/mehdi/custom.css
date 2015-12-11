@@ -67,6 +67,16 @@ div.breadcrumb{
     margin-bottom: -10px;
 }
 
+.row.row-no-padding [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.row.row-no-margin {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 /*div hr{*/
     /*padding-bottom:0px;*/
     /*margin-bottom:20px !important;*/
@@ -75,10 +85,15 @@ div.breadcrumb{
 .bloc-content-category-list-page-article .img_background{
     /*width:100%;*/
     height:300px;
-    background-size:cover;
     /*background-size:100%;*/
-    background-repeat:no-repeat;
+}
+.img_background {
+    background-repeat: no-repeat;
+    background-size:cover;
     background-position:center center;
+}
+.hpgrid .img_background{
+    height:300px;
 }
 
 .custom_transition{
@@ -98,10 +113,11 @@ div.breadcrumb{
     height:60px;
 }
 
-div.post-content{
+div.bloc-content-category-list-page-article div.post-content{
     margin-bottom:20px;
     padding-bottom:20px;
 }
+
 .excerpt-format{
     padding:20px;
     text-align:center;
@@ -128,7 +144,7 @@ div.post-content{
 .wrapper_footer{
     position: relative;
     min-height:100%;
-    padding-bottom: 130px;
+    padding-bottom: 110px;
 }
 
 .custom_footer{
@@ -137,6 +153,46 @@ div.post-content{
     bottom: -20px;
     left: 0;
     width:100%;
+}
+#homepage-layout{
+    background-color: white;
+}
+
+#homepage-layout .row.row-no-padding .hpgrid{
+    padding-bottom: 2px;
+}
+#homepage-layout .row.row-no-padding .hpgrid:first-child{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#homepage-layout .row.row-no-padding .hpgrid:nth-child(2){
+    padding-left: 2px !important;
+    padding-right: 0 !important;
+}
+
+#homepage-layout .row.row-no-padding .hpgrid:nth-child(3){
+     padding-left: 2px !important;
+     padding-right: 2px !important;
+ }
+
+#homepage-layout .row.row-no-padding .hpgrid:nth-child(4){
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.layer_titre_bloc_hp{
+    background-color: rgba(255,255,255,0.4) !important;
+    position:absolute;
+    height:49px;
+    bottom:0;
+    width:100%;
+    text-align: center !important;
+    color: black;
+    font-family: 'bebas_neuebold';
+    padding-top:13px;
+    letter-spacing: 0.1em;
+    font-size: 16px;
 }
 
 footer div.container.inner.text-center.subfooter{
@@ -158,6 +214,9 @@ footer div.container.inner.text-center.subfooter{
 
     .custom_transition .info {
         background: url("/wp-content/themes/keepsake/mehdi/img/loupe.png") center no-repeat;
+    }
+
+    .custom_transition .mask span:not('.glyphicon'){
         display: inline-block;
         text-decoration: none;
         padding: 0;
@@ -165,17 +224,27 @@ footer div.container.inner.text-center.subfooter{
         width: 20px;
         height: 20px;
         position: relative;
+
+    }
+
+    .custom_transition .mask span{
         top: -10px;
         opacity: 0;
         transition: opacity 0.5s 0s ease-in-out;
     }
 
-    .img_background.custom_transition:hover .mask {
-        opacity: 1;
-        border: 150px solid rgba(0, 0, 0, 0.7);
+    .custom_transition .mask span.action{
+        color:white;
+        font-size:50px;
+        top: -30px;
     }
 
-    .img_background.custom_transition:hover .info {
+    .img_background.custom_transition:hover .mask {
+        opacity: 1;
+        border: 150px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .img_background.custom_transition:hover span {
         opacity: 1;
         transition-delay: 0.3s;
     }
@@ -216,18 +285,32 @@ footer div.container.inner.text-center.subfooter{
     .excerpt-format{
         height:auto;
     }
-    .div_photo{
+
+    .hpgrid .div_photo{
+        height:240px;
+    }
+    .img_background .layer_titre_bloc_hp {
+        bottom: -60px;
+    }
+    .bloc-content-category-list-page-article .div_photo{
         width: 300px;
         margin: 0 auto;
     }
-    .col-md-12.col-sm-6{
+    .bloc-content-category-list-page-article .col-md-12.col-sm-6{
         margin-bottom:0px;
     }
-    .post-title{
+    .bloc-content-category-list-page-article .post-title{
         text-align:center;
     }
     div.col-md-4.bloc-content-category-list-page-article .post-title{
         height:45px;
+    }
+    .wrapper_footer{
+        padding-bottom: 158px;
+    }
+    .custom_footer{
+        height: 180px;
+        font-size:13px;
     }
 }
 
@@ -237,4 +320,13 @@ footer div.container.inner.text-center.subfooter{
     }
 }
 
+@media screen and (min-width:490px) and (max-width:768px) {
+    .custom_footer{
+        height: 130px;
+    }
+
+    .wrapper_footer{
+        padding-bottom: 110px;
+    }
+}
 
