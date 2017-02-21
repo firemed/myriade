@@ -10,11 +10,14 @@
 	$sidebar_active = is_active_sidebar('primary');
 	if( 'on' == esc_html(get_post_meta( $post->ID, '_ebor_disable_sidebar', true )) )
 		$sidebar_active = false;
+
+	$sidebar_active = false;
 	
 	/**
 	 * Build appropriate classes depending on sidebar
 	 */	
 	$class = ($sidebar_active) ? 'col-sm-8' : 'col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12';
+	$class = 'col-lg-12';
 	
 	echo ebor_page_title(
         $post_title
@@ -22,16 +25,19 @@
     );
 ?>
 
+<div class="breadcrumb">
+	<div class="container">
+	<?php
+		if(function_exists('bcn_display'))
+		{
+			bcn_display();
+		}
+		?>
+	</div>
+</div>
   
 <div id="post-<?php the_ID(); ?>" class="container inner">
-    <div class="breadcrumb">
-        <?php
-        if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }
-        ?>
-    </div>
+
 	<div class="row">
 	
 		<div class="<?php echo esc_attr($class); ?> content">

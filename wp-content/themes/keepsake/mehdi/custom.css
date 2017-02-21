@@ -29,7 +29,7 @@ html, body {
     margin: 30px 0;
 }
 
-#menu-standard-navigation .current-menu-item a{
+#menu-standard-navigation .current-menu-item a, #menu-standard-navigation .current-menu-ancestor > a{
     color:#cc1e1e !important;
 }
 
@@ -61,8 +61,8 @@ html, body {
 }
 
 div.breadcrumb{
-    background-color:transparent;
-    padding-left:0;
+    background-color:#eded34;
+    padding-left:10px;
 }
 
 .category-breadcrumb-wrapper div.breadcrumb{
