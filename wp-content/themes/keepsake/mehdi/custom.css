@@ -43,7 +43,7 @@ div.breadcrumb{
     padding-bottom:20px;
 }
 
-#menu-standard-navigation .current-menu-item a, #menu-standard-navigation .current-menu-ancestor > a{
+#menu-standard-navigation .current-menu-item > a, #menu-standard-navigation .current-menu-ancestor > a{
     color:#cc1e1e !important;
 }
 
