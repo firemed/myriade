@@ -41,7 +41,7 @@
 					
 					<?php 
 						get_template_part('inc/content','meta');
-						the_title('<h1 class="post-title">', '</h1>'); 
+//						the_title('<h1 class="post-title">', '</h1>');
 					?>
 					<div class="post-content">
 
