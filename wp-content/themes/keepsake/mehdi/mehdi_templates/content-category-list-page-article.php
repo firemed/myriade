@@ -46,6 +46,7 @@
             <div class="col-md-12 col-sm-6">
                 <div class="excerpt-format">
                 <?php
+                    $display_read_more_btn = true;
                     $nb_max_character = 100;
                     $custom_excerpt = strip_tags($data->post_content);
                     $nb_character = strlen($custom_excerpt);
@@ -56,6 +57,7 @@
 
                     if(empty($custom_excerpt)){
                         $custom_excerpt = "Cliquez pour plus de contenu !";
+                        $display_read_more_btn = false;
                     }
 
                 // or use wordpress one ...
@@ -71,11 +73,14 @@
                 ?>
                 </div>
             </div>
+            <?php
+                if($display_read_more_btn){
+            ?>
             <div class="button_container">
                 <a href="<?php echo $data->guid ?>" class="pink_button" title="">
                     En savoir plus..		</a>
             </div>
-
+            <?php } ?>
         </div>
     </div>
 </div>
