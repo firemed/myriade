@@ -11,6 +11,14 @@ html, body {
     top: 2%;
     left: 4%;
 }
+.page-title .inner {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.wpb_text_column {
+    margin-bottom: 20px !important;
+}
 
 .dark-wrapper.page-title .container.inner > h1{
     padding-left:50px;
@@ -27,6 +35,12 @@ html, body {
 
 #menu-standard-navigation{
     margin: 30px 0;
+}
+div.breadcrumb{
+    background-color:#eded34;
+    padding-left:10px;
+    margin-bottom:0;
+    padding-bottom:20px;
 }
 
 #menu-standard-navigation .current-menu-item a, #menu-standard-navigation .current-menu-ancestor > a{
@@ -60,10 +74,6 @@ html, body {
     display:none;
 }
 
-div.breadcrumb{
-    background-color:#eded34;
-    padding-left:10px;
-}
 
 .category-breadcrumb-wrapper div.breadcrumb{
     margin:0;
