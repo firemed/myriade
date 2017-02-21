@@ -59,7 +59,9 @@
                     }
 
                 // or use wordpress one ...
-                $custom_excerpt = $data->post_excerpt;
+                if(!empty($data->post_excerpt)){
+                    $custom_excerpt = $data->post_excerpt;
+                }
                 echo $custom_excerpt;
                 //
                 //    if( 'page' == $posttype ){
