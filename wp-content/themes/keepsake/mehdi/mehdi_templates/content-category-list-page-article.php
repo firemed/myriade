@@ -56,7 +56,8 @@
                     }
 
                     if(empty($custom_excerpt)){
-                        $custom_excerpt = "Cliquez pour plus de contenu !";
+//                        $custom_excerpt = "Cliquez pour plus de contenu !";
+                        $custom_excerpt = "";
                         $display_read_more_btn = false;
                     }
 
@@ -73,14 +74,11 @@
                 ?>
                 </div>
             </div>
-            <?php
-                if($display_read_more_btn){
-            ?>
+
             <div class="button_container">
-                <a href="<?php echo $data->guid ?>" class="pink_button" title="">
+                <a href="<?php echo $data->guid ?>" class="pink_button <?php if(!$display_read_more_btn){ ?> hide-opacitate<?php } ?>" title="">
                     En savoir plus..		</a>
             </div>
-            <?php } ?>
         </div>
     </div>
 </div>

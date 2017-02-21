@@ -213,6 +213,10 @@ div.bloc-content-category-list-page-article div.post-content{
     height:175px;
 }
 
+.bloc-content-category-list-page-article .hide-opacitate{
+    opacity: 0;
+}
+
 footer div.container.inner.text-center.subfooter{
      padding-bottom:0px;
 }
