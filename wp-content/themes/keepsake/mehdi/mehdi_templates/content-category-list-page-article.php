@@ -58,6 +58,9 @@
                         $custom_excerpt = "Cliquez pour plus de contenu !";
                     }
                     echo $custom_excerpt;
+
+                    // or use wordpress one ...
+                    $custom_excerpt = $data->post_excerpt;
                 //
                 //    if( 'page' == $posttype ){
                 //    } else {
