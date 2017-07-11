@@ -3,14 +3,14 @@
  * Plugin Name: Maintenance Mode
  * Plugin URI: https://github.com/lukasjuhas/lj-maintenance-mode
  * Description: Very simple Maintenance Mode & Coming soon page. Using default Wordpress markup, No ads, no paid upgrades.
- * Version: 1.4.1
+ * Version: 1.4.3
  * Author: Lukas Juhas
  * Author URI: http://lukasjuhas.com
  * Text Domain: lj-maintenance-mode
  * License: GPL2
  * Domain Path: /languages/
  *
- * Copyright 2014-2015  Lukas Juhas  (email : hello@lukasjuhas.com)
+ * Copyright 2014-2016  Lukas Juhas  (email : hello@lukasjuhas.com)
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.
@@ -26,12 +26,12 @@
  *
  * @package lj-maintenance-mode
  * @author Lukas Juhas
- * @version 1.4.1
+ * @version 1.4.3
  *
  */
 
 // define stuff
-define( 'LJMM_VERSION', '1.4.1' );
+define( 'LJMM_VERSION', '1.4.3' );
 define( 'LJMM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'LJMM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'LJMM_PLUGIN_BASENAME', plugin_basename( __FILE__ ));
@@ -62,8 +62,7 @@ function ljmm_install() {
 function ljmm_get_defaults($type) {
     switch($type) {
         case 'maintenance_message':
-            $default = "<img src='/wp-content/uploads/2015/12/website-maintenance'>";
-//            $default = __("<h1>Site sous maintenance</h1><p>Notre site est actuellement sous maintenance. Merci de revenir plus tard !</p>", LJMM_PLUGIN_DOMAIN );
+            $default = __("<h1>Website Under Maintenance</h1><p>Our Website is currently undergoing scheduled maintenance. Please check back soon.</p>", LJMM_PLUGIN_DOMAIN );
             break;
         case 'warning_wp_super_cache' :
             $default = __("Important: Don't forget to flush your cache using WP Super Cache when enabling or disabling Maintenance Mode.", LJMM_PLUGIN_DOMAIN);
@@ -151,13 +150,7 @@ class ljMaintenanceMode {
      * @since 1.1
     */
     function style() {
-        echo "<style type=\"text/css\">
-                body{
-                    background:#E7E7E7!important;
-                    max-width:100vw!important;
-                }
-                #wp-admin-bar-ljmm-indicator.Enabled { background-color:#e7e7e7 }
-            </style>";
+        echo '<style type="text/css">#wp-admin-bar-ljmm-indicator.Enabled { background: rgba(159, 0, 0, 1) }</style>';
     }
 
     /**
@@ -274,21 +267,6 @@ class ljMaintenanceMode {
                 $content = ljmm_get_defaults('maintenance_message');
             }
             $content = apply_filters('the_content', $content);
-            $content .= "<style type=\"text/css\">
-                body{
-                    background:#E7E7E7;
-                    max-width:100vw;
-                    text-align: center;
-                }
-                body h3{
-                    font-weight:normal !important;
-                }
-                html{
-                    background:#E7E7E7;
-                }
-            </style>";
-
-//            $content = "test";
 
             wp_die($content, get_bloginfo( 'name' ) . ' - ' . __('Website Under Maintenance', LJMM_PLUGIN_DOMAIN), array('response' => '503'));
         }

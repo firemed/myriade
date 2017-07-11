@@ -21,14 +21,21 @@
 /** Nom de la base de données de WordPress. */
 define('DB_NAME', 'myriade');
 
-/** Utilisateur de la base de données MySQL. */
 define('DB_USER', 'root');
 
-/** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '0ykOgTUF');
 
+
+/*
+
+define('DB_USER', 'root');
+
+define('DB_PASSWORD', 'OUUqO4gA');
+
+*/
 /** Adresse de l'hébergement MySQL. */
 define('DB_HOST', 'localhost');
+//define('DB_HOST', '37.187.61.24');
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define('DB_CHARSET', 'utf8');

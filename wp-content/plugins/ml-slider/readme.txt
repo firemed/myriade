@@ -3,8 +3,8 @@ Contributors: matchalabs
 Tags: wordpress slideshow,seo,slideshow,slider,widget,wordpress slider,image slider,flexslider,flex slider,nivoslider,nivo slider,responsive,responsive slides,coinslider,coin slider,slideshow,carousel,responsive slider,vertical slides
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CQ84KC4X8YKW8
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 3.2.1
+Tested up to: 4.4
+Stable tag: 3.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,7 +43,7 @@ The most popular WordPress slider plugin. Creating slideshows with [Meta Slider]
 * Free basic support (covering installation issues and theme/plugin conflicts)
 * Lightbox support with the [Meta Slider Lightbox](http://wordpress.org/plugins/ml-slider-lightbox/) addon
 
-Upgrade to [Meta Slider Pro](http://www.metaslider.com/upgrade) to add support for:
+Upgrade to [Meta Slider Pro](https://www.metaslider.com/upgrade) to add support for:
 
 * YouTube & Vimeo slides
 * HTML slides
@@ -59,7 +59,7 @@ Upgrade to [Meta Slider Pro](http://www.metaslider.com/upgrade) to add support f
 * Spanish (thanks to eltipografico)
 * German (thanks to Rewolve44)
 * Polish (thanks to gordon34)
-* Chinese (thanks to 断青丝)
+* Chinese (thanks to 断青丝 and mamsds)
 * Taiwanese (thanks to 断青丝)
 * Norwegian (thanks to Dreamsoft)
 * Romanian (thanks to Octav Madalin Stanoaia)
@@ -70,6 +70,7 @@ Upgrade to [Meta Slider Pro](http://www.metaslider.com/upgrade) to add support f
 * Hebrew (thanks to Ahrale)
 * Portuguese (thanks to mauro.mascarenhas)
 * Russian (thanks to asidoryak)
+* Ukrainian (thanks to mister_r)
 
 Read more and thanks to:
 
@@ -78,7 +79,7 @@ Read more and thanks to:
 * [Coin Slider](http://workshop.rs/projects/coin-slider/)
 * [Nivo Slider](http://dev7studios.com/nivo-slider/)
 
-Find out more at http://www.metaslider.com
+Find out more at https://www.metaslider.com
 
 Follow us on Twitter: [@wpmetaslider](https://twitter.com/wpmetaslider)
 
@@ -146,7 +147,45 @@ See www.metaslider.com/documentation/image-cropping/
 
 == Changelog ==
 
-= 3.3 [17/02/14] =
+= 3.3.5 [22/09/15] =
+
+* Prepare plugin for WordPress.org translation project (rename textdomain from 'metaslider' to 'ml-slider')
+* Small styling fix
+
+= 3.3.4.1 [29/07/15] =
+
+* Fix Roots theme CSS conflict
+
+= 3.3.4 [16/07/15] =
+
+* Add HTML5 validation by applying a property="stylesheet" attribute to meta slider <link> CSS tags
+* Remove unused "Resource Manager" code
+* Chinese language pack updated (thanks to mamsds!)
+
+= 3.3.3 [11/06/15] =
+
+* Ukrainian language pack added (thanks to mister_r!)
+* Fix: Meta Slider hoplink incorrectly adding parameters to filtered url
+* Add "metaslider_attachment_url" filter
+
+= 3.3.2 [16/04/15] =
+
+* Fix: FPD Security issue. Thanks to Ole Aass (@oleaass) for finding and disclosing this issue.
+
+More information:
+
+The fix will prevent some servers (configured with 'display_errors' set to 'on') from disclosing the full path to certain files within Meta Slider.
+
+http://codex.wordpress.org/Security_FAQ#Why_are_there_path_disclosures_when_directly_loading_certain_files.3F
+
+= 3.3.1 [23/03/15] =
+
+* Fix: Remove 'create video playlist' option from Media Library (on Meta Slider page only)
+* Fix: Support for Enhanced Media Library plugin
+* Fix: Return public slide when DOING_AJAX
+* Improvement: Use admin actions to save slideshow settings
+
+= 3.3 [17/02/15] =
 
 * New feature: Smart pad option (for Image Slides & Flex Slider only)
 * Portuguese language files added (thanks to mauro.mascarenhas)

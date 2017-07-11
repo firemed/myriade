@@ -48,7 +48,7 @@
 @FormatStatusBg: 		#a3eda3;//lightgreen
 @FormatStatusBorder: 	#62c462;//darkergreen
 
-@CommentsLink: 			#F00;//red
+@CommentsLink: 			@lnkCol;//was red before
 
 @lnkColPostNavigationText:    @lnkColLightenlinkColor;
 
@@ -89,6 +89,10 @@
 @hfourLineHeight:     23px;
 @hfiveLineHeight:     18px;
 @hsixLineHeight:      15px;
+
+//Customizr rtl settings
+@floatDirection: left;
+@textAlign : left;
 
 // Accent colors
 // -------------------------
@@ -249,7 +253,7 @@
 // Navbar
 // -------------------------
 @navbarCollapseWidth:             979px;
-@navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
+@navbarCollapseDesktopWidth:      (@navbarCollapseWidth + 1);
 
 @navbarHeight:                    40px;
 @lnkColnavbarBtnHighlight: 			  @lnkCol;

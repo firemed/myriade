@@ -1,4 +1,18 @@
-
+AuthUserFile /var/www/myriade/www/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Restricted Access"
+AuthType Basic
+<limit GET>
+require valid-user
+</Limit> 
 # BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
 
 # END WordPress
