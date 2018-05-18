@@ -7,9 +7,12 @@ html, body {
 #circle-nav {
     position:absolute;
     /*width: 14%;*/
-    height: 144%;
+    width:130px;
+    height:auto;
+    /*height: 144%;*/
     top: 2%;
     left: 4%;
+
 }
 .page-title .inner {
     padding-top: 20px;
@@ -66,8 +69,22 @@ div.breadcrumb{
 
 @media screen and (max-width:992px){
     #slogan{
-        padding-top:50px;
+
+        padding: 0 100px 35px;
+        margin-left: 58px;
+        margin-top: -8px;
     }
+
+    #circle-nav {
+        width: 87px;
+    }
+
+    .navbar-brand{
+        float:none;
+        height: 1px;
+    }
+
+
 }
 
 .vc_grid-filter > li.vc_grid-filter-item-33{
@@ -226,7 +243,7 @@ footer div.container.inner.text-center.subfooter{
 /*@media screen and (min-width:992px){*/
 @media screen and (max-width:1550px){
     #circle-nav {
-        height: 120%;
+        /*height: 120%;*/
     }
 }
 .custom_transition .mask {
